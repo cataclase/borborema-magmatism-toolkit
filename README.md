@@ -8,8 +8,6 @@ The script generates a **Sr vs ⁸⁷Sr/⁸⁶Sr diagram** and estimates the bes
 
 This workflow was developed to investigate the evolution of **post-collisional granitoid magmatism from the Rio Grande do Norte Domain (Borborema Province, NE Brazil)**.
 
-The resulting figures follow graphical standards commonly used in the journal *Lithos*.
-
 ---
 
 # Features
@@ -127,6 +125,7 @@ GitHub repository.
 # License
 
 This project is distributed under the MIT License.
+
 
 
 
