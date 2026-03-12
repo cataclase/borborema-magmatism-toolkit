@@ -1,4 +1,4 @@
-![AFC Sr-Sr Diagram](figures/AFC_SrSr_example.png)
+![AFC Sr-Sr Diagram](figures/AFC_SrSr.png)
 
 # AFC Sr–Sr Modeling for Granitic Magmatic Suites
 
@@ -125,6 +125,7 @@ GitHub repository.
 # License
 
 This project is distributed under the MIT License.
+
 
 
 
