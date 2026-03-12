@@ -1,4 +1,5 @@
-![AFC Sr-Sr Diagram](figures/AFC_SrSr.png)
+![AFC Sr-Sr Diagram](borborema-magmatism-toolkit/figures
+/AFC_SrSr.png)
 
 # Borborema Magmatism Toolkit
 
@@ -136,6 +137,7 @@ GitHub repository.
 # License
 
 This project is distributed under the MIT License.
+
 
 
 
