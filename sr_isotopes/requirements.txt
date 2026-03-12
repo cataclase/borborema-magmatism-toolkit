@@ -1,4 +1,9 @@
+## Usage
+
+Example:
+
 numpy
 pandas
 matplotlib
 openpyxl
+
