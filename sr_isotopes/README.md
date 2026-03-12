@@ -1,5 +1,4 @@
-![AFC Sr-Sr Diagram](borborema-magmatism-toolkit/figures
-/AFC_SrSr.png)
+![AFC Sr-Sr Diagram](borborema-magmatism-toolkit/figures/AFC_SrSr.png)
 
 # Borborema Magmatism Toolkit
 
