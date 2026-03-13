@@ -4,9 +4,10 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.xxxx/zenodo.xxxxxx.svg)]()
 
-Python toolkit for geochemical, isotopic, and geochronological analysis of magmatic systems in the Borborema Province (NE Brazil).
+Python toolkit for geochemical, isotopic, and geochronological analysis of magmatic systems, developed for the study of Ediacaran–Cambrian granitoid magmatism in the Borborema Province (NE Brazil).
 
 This toolkit was developed to support integrated studies of whole-rock geochemistry, radiogenic isotopes, and zircon U–Pb geochronology in post-collisional granitoids.
+
 
 ---
 
@@ -17,6 +18,17 @@ The toolkit integrates multiple analytical workflows commonly used in igneous pe
 Applications include studies of the magmatic evolution of the Rio Grande do Norte Domain in the Borborema Province.
 
 ---
+
+# Requirements
+
+The toolkit requires:
+
+- Python 3.9+
+- numpy
+- pandas
+- matplotlib
+- scikit-learn
+- scipy
 
 # Repository structure
 
@@ -169,3 +181,4 @@ Mine Geologist | Igneous Petrology | Isotope Geochemistry
 # License
 
 MIT License
+
