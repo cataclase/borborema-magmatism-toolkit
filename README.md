@@ -1,45 +1,53 @@
 # Borborema Magmatism Toolkit
-![Python](https://img.shields.io/badge/python-3.10+-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
-Python toolkit for geochemical and isotopic analysis of post-collisional magmatism in the **Rio Grande do Norte Domain (DRN), Borborema Province, NE Brazil**.
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.xxxx/zenodo.xxxxxx.svg)]()
 
-This repository contains scripts used to investigate the geochemical and isotopic evolution of Ediacaran–Cambrian granitoids.
+Python toolkit for geochemical, isotopic, and geochronological analysis of magmatic systems in the Borborema Province (NE Brazil).
 
-## Modules
-
-### Sr isotopes
-Assimilation–Fractional Crystallization (AFC) modeling of Sr isotopes.
-
-Python script for modeling **Sr isotope evolution using an Assimilation–Fractional Crystallization (AFC) model**.
-
-The script generates a **Sr vs ⁸⁷Sr/⁸⁶Sr diagram** and estimates the best AFC parameters using a Monte Carlo approach.
-
-This workflow was developed to investigate the evolution of **post-collisional granitoid magmatism from the Rio Grande do Norte Domain (Borborema Province, NE Brazil)**.
-
-The resulting figures follow graphical standards commonly used in the journal *Lithos*.
+This toolkit was developed to support integrated studies of whole-rock geochemistry, radiogenic isotopes, and zircon U–Pb geochronology in post-collisional granitoids.
 
 ---
 
-# Features
+# Overview
 
-* Monte Carlo AFC parameter estimation
-* Automatic recognition of dataset column names
-* Plot of:
+The toolkit integrates multiple analytical workflows commonly used in igneous petrology and isotope geochemistry.
 
-  * Magmatic suites
-  * Archean crust
-  * Paleoproterozoic crust
-  * Parental magma
-  * Country rock
-  * Melt fraction along AFC trajectory
-* Publication-quality figures
+Applications include studies of the magmatic evolution of the Rio Grande do Norte Domain in the Borborema Province.
 
-Figures are exported as:
+---
 
-PNG
-SVG
-PDF
+# Repository structure
+
+borborema-magmatism-toolkit
+
+```
+├── README.md
+├── requirements.txt
+├── run_all_figures.py
+│
+├── examples
+│   ├── wr_pca_example.csv
+│   ├── afc_model_example.csv
+│   ├── sr_nd_models_example.csv
+│   └── upb_geochronology_example.csv
+│
+├── figures
+│   ├── pca_plot.png
+│   ├── afc_model.png
+│   ├── sm_nd_evolution.png
+│   └── upb_ages.png
+│
+└── borborema
+    ├── __init__.py
+    ├── wr_pca.py
+    ├── afc_model.py
+    ├── sr_nd_models.py
+    ├── upb_geochronology.py
+    ├── datasets.py
+    └── data_cleaning.py
+```
 
 ---
 
@@ -47,97 +55,117 @@ PDF
 
 Clone the repository:
 
-```bash
-git clone https://github.com/cataclase/borborema-magmatism-toolkit.git
+```
+git clone https://github.com/yourusername/borborema-magmatism-toolkit
 cd borborema-magmatism-toolkit
 ```
 
 Install dependencies:
 
-```bash
-pip install -r sr_isotopes/requirements.txt
+```
+pip install -r requirements.txt
 ```
 
 ---
 
-# Usage
+# Whole-rock geochemistry – PCA
 
-Run the script with a dataset:
+Principal Component Analysis allows identification of geochemical trends and clustering of magmatic suites.
 
-```bash
-python sr_isotopes/afc_sr_model.py example_data/example_data.csv
-```
-
-or
-
-```bash
-python afc_sr_model.py example_data.xlsx
-```
-
-The script will output the best AFC parameters:
-
-```
-Best r = ...
-Best D = ...
-```
-
-and generate the figure:
-
-```
-AFC_SrSr.png
-AFC_SrSr.svg
-AFC_SrSr.pdf
-```
-
----
-
-# Input Data Format
-
-The dataset must contain the following columns:
-
-| Column                   | Description                    |
-| ------------------------ | ------------------------------ |
-| SERIE / Serie            | Magmatic series classification |
-| Sr ppm / Sr              | Strontium concentration        |
-| 87Sr/86Sr(T) / 87Sr/86Sr | Strontium isotope ratio        |
+![PCA](figures/pca_plot.png)
 
 Example:
 
 ```
-Sample,SERIE,Sr ppm,87Sr/86Sr(T)
-A1,PHKCalcAlk,512,0.7121
-A2,Shos,689,0.7108
-A3,Archean,120,0.885
+from borborema.wr_pca import run_pca
 ```
 
 ---
 
-# Output Example
+# Rb–Sr isotope modelling – AFC
 
-The script produces a Sr–Sr isotope diagram showing:
+Assimilation–Fractional Crystallization modelling following DePaolo (1981).
 
-* AFC best-fit trajectory
-* melt fraction evolution
-* magmatic suites
-* crustal endmembers
+![AFC](figures/afc_model.png)
+
+Example:
+
+```
+from borborema.afc_model import monte_carlo_afc
+```
 
 ---
 
-# Citation
+# Sm–Nd isotopic evolution
 
-If you use this toolkit in scientific work, please cite:
+Visualization of εNd(t) versus age with comparison to the depleted mantle evolution curve.
 
-Tavares, C. (2026).
-*Borborema Magmatism Toolkit: geochemical and isotopic analysis of post-collisional granitoids from the Rio Grande do Norte Domain (Borborema Province, NE Brazil).*  
-GitHub repository.
+![Sm-Nd](figures/sm_nd_evolution.png)
 
-DOI: (to be assigned via Zenodo)
+Example:
+
+```
+from borborema.sr_nd_models import plot_eNd_age
+```
+
+---
+
+# U–Pb geochronology
+
+Visualization of zircon crystallization ages and associated analytical uncertainties.
+
+![U-Pb](figures/upb_ages.png)
+
+Example:
+
+```
+from borborema.upb_geochronology import plot_upb_ages
+```
+
+---
+
+# Reproducing all figures
+
+All figures used in the examples can be generated automatically:
+
+```
+python run_all_figures.py
+```
+
+Figures will be saved in:
+
+```
+figures/
+```
+
+---
+
+# Scientific context
+
+The toolkit was developed to investigate:
+
+• Post-collisional magmatism
+• Crust–mantle interaction
+• Magmatic differentiation processes
+• Isotopic evolution of granitoid systems
+
+The workflows implemented here were applied to magmatic suites of the Borborema Province.
+
+---
+
+# Code availability
+
+All scripts used for geochemical modelling and figure generation are available in this repository.
+
+---
+
+# Author
+
+Caio Tavares
+Mine Geologist | Igneous Petrology | Isotope Geochemistry
 
 ---
 
 # License
 
-This project is distributed under the MIT License.
-
-
-
+MIT License
