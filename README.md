@@ -26,7 +26,7 @@ Implemented workflows include:
 - whole-rock PCA
 - AFC modelling
 - Sm–Nd isotopic panels
-- zircon U–Pb age plots
+- zircon U–Pb age distributions
 
 ---
 
@@ -99,6 +99,10 @@ Install dependencies:
 ```
 pip install -r requirements.txt
 ```
+
+# Quick Start
+
+Run all example workflows and reproduce the figures:
 
 ---
 
@@ -274,7 +278,16 @@ Caio Tavares
 Mine Geologist | Igneous Petrology | Isotope Geochemistry
 
 ---
+# How to Cite
 
+If you use this toolkit in scientific work, please cite:
+
+Tavares, C. (2026)  
+Borborema Magmatism Toolkit: Python tools for geochemical and isotopic analysis of granitoid systems.  
+GitHub repository.  
+https://github.com/cataclase/borborema-magmatism-toolkit
+
+---
 # License
 
 MIT License
