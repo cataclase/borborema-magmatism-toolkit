@@ -62,7 +62,7 @@ def plot_upb_ages(df, colors=None):
         for suite in suites
     ]
 
-    ax.legend(handles=legend_elements, title="Suite", loc="upper right")
+    ax.legend(handles=legend_elements, title="Suite", loc="lower right")
 
     plt.tight_layout()
 
