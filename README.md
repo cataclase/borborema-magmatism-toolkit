@@ -156,6 +156,8 @@ print("Best D:", results["best_D"])
 from borborema.afc_model import monte_carlo_afc
 ```
 
+---
+
 # Sm–Nd isotopic evolution
 
 Visualization of εNd(t) versus age with comparison to the depleted mantle evolution curve.
@@ -211,6 +213,32 @@ figures/
 ```
 
 ---
+
+Testing in Google Colab
+
+You can test the toolkit in Google Colab by uploading the repository files and running the example workflows directly.
+
+Example:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import importlib
+import borborema.sr_nd_models as sr_nd_models
+
+importlib.reload(sr_nd_models)
+from borborema.sr_nd_models import run_sr_nd_from_dataframe
+
+df = pd.read_csv("sample_data/sr_nd_models_exemple.csv", encoding="latin1")
+
+fig, results = run_sr_nd_from_dataframe(df)
+
+print(results)
+plt.show()
+
+To generate all example figures in Colab:
+
+%cd /content
+!python -m borborema.run_all_figures
 
 # Scientific context
 
