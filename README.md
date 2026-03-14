@@ -42,13 +42,19 @@ pandas
 matplotlib
 scikit-learn
 scipy
+```
 
 Install all dependencies with:
 
+```bash
 pip install -r requirements.txt
+```
+
+---
 
 # Repository structure
 
+```
 borborema-magmatism-toolkit/
 
 ├── README.md
@@ -62,10 +68,10 @@ borborema-magmatism-toolkit/
 │   └── upb_geochronology_exemple.csv
 │
 ├── figures/
-│   ├── pca_plot.png
-│   ├── afc_model.png
-│   ├── sm_nd_panel.png
-│   └── upb_ages.png
+│   ├── PCA.png
+│   ├── AFC_SrSr.png
+│   ├── SrNd.png
+│   └── UPB_geochronology.png
 │
 └── borborema/
     ├── __init__.py
@@ -75,6 +81,7 @@ borborema-magmatism-toolkit/
     ├── upb_geochronology.py
     ├── datasets.py
     └── data_cleaning.py
+```
 
 ---
 
@@ -103,6 +110,7 @@ Principal Component Analysis allows identification of geochemical trends and clu
 
 Example:
 
+```python
 import pandas as pd
 from borborema.wr_pca import run_pca_from_dataframe
 
@@ -122,7 +130,6 @@ fig, results = run_pca_from_dataframe(
 
 print("Explained variance:", results["explained_variance"])
 print("Groups:", results["groups"])
-from borborema.wr_pca import run_pca
 ```
 
 ---
@@ -135,6 +142,7 @@ Assimilation–Fractional Crystallization modelling following DePaolo (1981).
 
 Example:
 
+```python
 import pandas as pd
 from borborema.afc_model import run_afc_from_dataframe
 
@@ -153,7 +161,6 @@ fig, results = run_afc_from_dataframe(
 
 print("Best r:", results["best_r"])
 print("Best D:", results["best_D"])
-from borborema.afc_model import monte_carlo_afc
 ```
 
 ---
@@ -166,6 +173,7 @@ Visualization of εNd(t) versus age with comparison to the depleted mantle evolu
 
 Example:
 
+```python
 import pandas as pd
 from borborema.sr_nd_models import run_sr_nd_from_dataframe
 
@@ -174,7 +182,6 @@ df = pd.read_csv("sample_data/sr_nd_models_exemple.csv", encoding="latin1")
 fig, results = run_sr_nd_from_dataframe(df)
 
 print(results)
-from borborema.sr_nd_models import plot_eNd_age
 ```
 
 ---
@@ -187,13 +194,13 @@ Visualization of zircon crystallization ages and associated analytical uncertain
 
 Example:
 
+```python
 import pandas as pd
 from borborema.upb_geochronology import plot_upb_ages
 
 df = pd.read_csv("sample_data/upb_geochronology_exemple.csv", encoding="utf-8-sig")
 
 fig = plot_upb_ages(df)
-from borborema.upb_geochronology import plot_upb_ages
 ```
 
 ---
@@ -214,18 +221,15 @@ figures/
 
 ---
 
-Testing in Google Colab
+# Testing in Google Colab
 
 You can test the toolkit in Google Colab by uploading the repository files and running the example workflows directly.
 
 Example:
 
+```python
 import pandas as pd
 import matplotlib.pyplot as plt
-import importlib
-import borborema.sr_nd_models as sr_nd_models
-
-importlib.reload(sr_nd_models)
 from borborema.sr_nd_models import run_sr_nd_from_dataframe
 
 df = pd.read_csv("sample_data/sr_nd_models_exemple.csv", encoding="latin1")
@@ -234,20 +238,25 @@ fig, results = run_sr_nd_from_dataframe(df)
 
 print(results)
 plt.show()
+```
 
 To generate all example figures in Colab:
 
+```python
 %cd /content
 !python -m borborema.run_all_figures
+```
+
+---
 
 # Scientific context
 
 The toolkit was developed to investigate:
 
-• Post-collisional magmatism
-• Crust–mantle interaction
-• Magmatic differentiation processes
-• Isotopic evolution of granitoid systems
+• Post-collisional magmatism  
+• Crust–mantle interaction  
+• Magmatic differentiation processes  
+• Isotopic evolution of granitoid systems  
 
 The workflows implemented here were applied to magmatic suites of the Borborema Province.
 
@@ -261,7 +270,7 @@ All scripts used for geochemical modelling and figure generation are available i
 
 # Author
 
-Caio Tavares
+Caio Tavares  
 Mine Geologist | Igneous Petrology | Isotope Geochemistry
 
 ---
@@ -269,5 +278,3 @@ Mine Geologist | Igneous Petrology | Isotope Geochemistry
 # License
 
 MIT License
-
-
